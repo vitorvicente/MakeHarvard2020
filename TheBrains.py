@@ -20,6 +20,8 @@ def speak(obj):
     client = tts.init()
     getSpeed = client.getProperty('rate')
     client.setProperty('rate', 145)
+    vol = client.getProperty('volume')
+    engine.setProperty('volume',1.0)
     client.say(obj)
     client.runAndWait()
 
