@@ -45,4 +45,5 @@ if __name__ == '__main__':
     TTE = main()
     filePath = TTE.takePhoto()
     object = visionAPI.analyze(filePath)
+    print("[*] The Likely Object Is: " + object)
     TTE.speak(object)
