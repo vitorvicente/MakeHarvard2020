@@ -1,6 +1,6 @@
 # Imports
 import uuid, io, os, pyttsx3 as tts
-from picamera import PiCamera
+#from picamera import PiCamera
 from time import sleep
 from google.cloud import vision
 from google.cloud.vision import types
@@ -19,7 +19,7 @@ class main:
         camera.stop_preview(path)
         return(path)
 
-    def generateID(self):
+    def generateID():
         randID = uuid.uuid1()
         return randID.hex
 
