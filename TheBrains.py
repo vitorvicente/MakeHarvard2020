@@ -41,7 +41,7 @@ def generateID():
 def main():
     print("[*] Ready to Analyze!")
     filePath = takePhoto()
-    object = visionAPI.analyze(filePath)
+    object = analyze(filePath)
     speak(object)
 
 main()
