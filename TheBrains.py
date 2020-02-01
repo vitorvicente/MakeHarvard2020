@@ -1,6 +1,6 @@
 import uuid
 import pyttsx3 as tts
-#from picamera import PiCamera
+from picamera import PiCamera
 from time import sleep
 
 def takePhoto():
