@@ -42,6 +42,7 @@ def main():
     print("[*] Ready to Analyze!")
     filePath = takePhoto()
     object = analyze(filePath)
-    speak(object)
+    print(object)
+    #speak(object)
 
 main()
