@@ -4,7 +4,7 @@ from picamera import PiCamera
 from time import sleep
 
 def takePhoto():
-    cam = PiCamera()
+    camera = PiCamera()
     camera.start_preview(alpha=192)
     sleep(1)
     hexID = generateID()
