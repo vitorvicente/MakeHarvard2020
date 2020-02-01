@@ -5,7 +5,7 @@ from time import sleep
 from google.cloud import vision
 from google.cloud.vision import types
 
-def takePhoto(self):
+def takePhoto():
     camera = PiCamera()
     camera.start_preview(alpha=192)
     sleep(1)
