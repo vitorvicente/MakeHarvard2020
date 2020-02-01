@@ -23,6 +23,5 @@ def speak(obj):
     client.runAndWait()
 
 def main():
-    takePhoto
-
+    takePhoto()
 main()
