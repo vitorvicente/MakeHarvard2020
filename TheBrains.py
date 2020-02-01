@@ -12,8 +12,8 @@ def takePhoto():
     hexID = str(generateID() + ".jpg")
     print("[*] Photo Created w/ ID: " + hexID)
     path = str("/home/pi/Desktop/Pictures/" + hexID)
-    camera.capture()
-    camera.stop_preview(path)
+    camera.capture(path)
+    camera.stop_preview()
     return(path)
 
 def speak(obj):
