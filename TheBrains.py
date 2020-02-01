@@ -32,7 +32,7 @@ def analyze(filePath):
     response = client.label_detection(image=image)
     objects = response.label_annotations
     print("[*] The Likely Object is: " + str(objects[0]))
-    return(labels[0].description)
+    return(objects[0].description)
 
 def generateID():
     randID = uuid.uuid1()
