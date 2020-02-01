@@ -8,7 +8,7 @@ def takePhoto():
     camera.start_preview(alpha=192)
     sleep(1)
     hexID = generateID()
-    camera.capture("/home/pi/Desktop/Pictures/" + hexID)
+    camera.capture("/home/pi/Desktop/Pictures/" + hexID + ".jpg")
     camera.stop_preview()
 
 def generateID():
