@@ -31,7 +31,7 @@ def analyze(filePath):
     image = types.Image(content=content)
     response = client.label_detection(image=image)
     objects = response.label_annotations
-    print("[*] The Likely Object is: " + objects[0])
+    print("[*] The Likely Object is: " + str(objects[0]))
     return(labels[0].description)
 
 def generateID():
