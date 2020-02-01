@@ -19,9 +19,7 @@ class main:
         camera.stop_preview(path)
         return(path)
 
-    def generateID():
-        randID = uuid.uuid1()
-        return randID.hex
+
 
     def speak(obj):
         client = tts.init()
@@ -40,6 +38,10 @@ class visionAPI:
         response = client.label_detection(image=image)
         objects = response.label_annotations
         return(labels[0].description)
+
+def generateID():
+    randID = uuid.uuid1()
+    return randID.hex
 
 if __name__ == '__main__':
     TTE = main()
