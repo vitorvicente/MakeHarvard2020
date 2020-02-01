@@ -43,6 +43,6 @@ def main():
     filePath = takePhoto()
     object = analyze(filePath)
     print(object)
-    #speak(object)
+    speak(object)
 
 main()
