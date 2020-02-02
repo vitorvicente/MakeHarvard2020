@@ -39,7 +39,7 @@ def generateID():
     randID = uuid.uuid1()
     return randID.hex
 
-def main_event():
+def main_event(channel):
     filePath = takePhoto()
     object = analyze(filePath)
     print("[*] The Likely Object is: " + str(object))
