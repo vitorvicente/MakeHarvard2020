@@ -24,8 +24,7 @@ def speak(obj):
     client.setProperty('volume',1.0)
     client.say(obj)
     client.runAndWait()
-    #checkButtonPress()
-    exit()
+    checkButtonPress()
 
 def analyze(filePath):
     client = vision.ImageAnnotatorClient.from_service_account_json('/home/pi/makeharvard.json')
@@ -56,11 +55,8 @@ def checkButtonPress():
     while(1):
         if GPIO.input(18) == GPIO.HIGH:
             main_event()
-            #print("[*] Listening...")
-            #sleep(5)
-            #continue
-    #print("here")
-    #main_event()
-
+        else:
+            print("[*] Listening...")
+            sleep(5)
 
 checkButtonPress()
