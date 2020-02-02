@@ -8,7 +8,7 @@ from google.cloud.vision import types
 camera = PiCamera()
 
 def takePhoto():
-    sleep(3)
+    sleep(1)
     hexID = str(generateID() + ".jpg")
     print("[*] Photo Created w/ ID: " + hexID)
     path = str("/home/pi/Desktop/Pictures/" + hexID)
