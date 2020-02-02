@@ -55,7 +55,8 @@ def checkButtonPress():
     while(1):
         if GPIO.input(18) != GPIO.HIGH:
             print("[*] Listening...")
-            sleep(10)
+            sleep(5)
+            break
     main_event
 
 
