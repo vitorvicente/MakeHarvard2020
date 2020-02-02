@@ -1,5 +1,5 @@
 # Imports
-import uuid, io, os, pyttsx3 as tts
+import uuid, io, os, pyttsx3 as tts, RPi.GPIO as gpio
 from picamera import PiCamera
 from time import sleep
 from google.cloud import vision
@@ -33,18 +33,23 @@ def analyze(filePath):
     image = types.Image(content=content)
     response = client.label_detection(image=image)
     objects = response.label_annotations
-    print("[*] The Likely Object is: " + str(objects[0]))
     return(objects[0].description)
 
 def generateID():
     randID = uuid.uuid1()
     return randID.hex
 
-def main():
-    print("[*] Ready to Analyze!")
+def main_event():
     filePath = takePhoto()
     object = analyze(filePath)
-    print(object)
+    print("[*] The Likely Object is: " + str(object))
     speak(object)
 
-main()
+def checkButtonPress():
+    print("[*] Ready to Analyze!")
+    gpio.setwarnings(False)
+    gpio.setmode(GPIO.BOARD)
+    gpio.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    gpio.add_event_detect(24, GPIO.RISING, callback = main_event)
+
+checkButtonPress()
