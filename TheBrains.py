@@ -7,13 +7,11 @@ from google.cloud.vision import types
 
 def takePhoto():
     camera = PiCamera()
-    camera.start_preview(alpha=192)
-    sleep(1)
+    sleep(3)
     hexID = str(generateID() + ".jpg")
     print("[*] Photo Created w/ ID: " + hexID)
     path = str("/home/pi/Desktop/Pictures/" + hexID)
     camera.capture(path)
-    camera.stop_preview()
     return(path)
 
 def speak(obj):
