@@ -24,6 +24,7 @@ def speak(obj):
     client.setProperty('volume',1.0)
     client.say("hello")
     client.runAndWait()
+    exit()
 
 def analyze(filePath):
     client = vision.ImageAnnotatorClient.from_service_account_json('/home/pi/makeharvard.json')
@@ -44,7 +45,7 @@ def main_event():
     object = analyze(filePath)
     print("[*] The Likely Object is: " + str(object))
     speak(object)
-'''
+
 def checkButtonPress():
     print("[*] Ready to Analyze!")
     GPIO.setwarnings(False)
@@ -54,6 +55,6 @@ def checkButtonPress():
         if GPIO.input(18) == GPIO.HIGH:
             main_event()
     #GPIO.add_event_detect(18, GPIO.RISING, callback = main_event)
-'''
 
-main_event()
+
+checkButtonPress()
