@@ -1,5 +1,5 @@
 # Imports
-import uuid, io, os, pyttsx3 as tts, RPi.GPIO as gpio
+import uuid, io, os, pyttsx3 as tts, RPi.GPIO as GPIO
 from picamera import PiCamera
 from time import sleep
 from google.cloud import vision
@@ -47,9 +47,9 @@ def main_event():
 
 def checkButtonPress():
     print("[*] Ready to Analyze!")
-    gpio.setwarnings(False)
-    gpio.setmode(GPIO.BOARD)
-    gpio.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    gpio.add_event_detect(24, GPIO.RISING, callback = main_event)
+    GPIO.setwarnings(False)
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.add_event_detect(24, GPIO.RISING, callback = main_event)
 
 checkButtonPress()
