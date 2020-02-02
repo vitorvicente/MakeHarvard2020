@@ -5,8 +5,9 @@ from time import sleep
 from google.cloud import vision
 from google.cloud.vision import types
 
+camera = PiCamera()
+
 def takePhoto():
-    camera = PiCamera()
     sleep(3)
     hexID = str(generateID() + ".jpg")
     print("[*] Photo Created w/ ID: " + hexID)
