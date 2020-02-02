@@ -39,7 +39,7 @@ def generateID():
     randID = uuid.uuid1()
     return randID.hex
 
-def main_event(channel):
+def main_event():
     filePath = takePhoto()
     object = analyze(filePath)
     print("[*] The Likely Object is: " + str(object))
@@ -50,6 +50,10 @@ def checkButtonPress():
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(24, GPIO.RISING, callback = main_event)
+    while(1):
+        if GPIO.input(24) == GPIO.HIGH:
+            print("here")
+            main_event()
+    #GPIO.add_event_detect(24, GPIO.RISING, callback = main_event)
 
 checkButtonPress()
