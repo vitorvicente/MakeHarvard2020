@@ -22,7 +22,7 @@ def speak(obj):
     client.setProperty('rate', 145)
     vol = client.getProperty('volume')
     client.setProperty('volume',1.0)
-    client.say(obj)
+    client.say("hello")
     client.runAndWait()
 
 def analyze(filePath):
