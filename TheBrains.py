@@ -44,6 +44,7 @@ def main_event():
     object = analyze(filePath)
     print("[*] The Likely Object is: " + str(object))
     speak(object)
+    stop
 
 def checkButtonPress():
     print("[*] Ready to Analyze!")
