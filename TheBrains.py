@@ -44,8 +44,7 @@ def main_event():
     object = analyze(filePath)
     print("[*] The Likely Object is: " + str(object))
     speak(object)
-    stop
-
+'''
 def checkButtonPress():
     print("[*] Ready to Analyze!")
     GPIO.setwarnings(False)
@@ -55,5 +54,6 @@ def checkButtonPress():
         if GPIO.input(18) == GPIO.HIGH:
             main_event()
     #GPIO.add_event_detect(18, GPIO.RISING, callback = main_event)
+'''
 
-checkButtonPress()
+main_event()
