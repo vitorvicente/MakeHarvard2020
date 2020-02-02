@@ -49,7 +49,7 @@ def checkButtonPress():
     print("[*] Ready to Analyze!")
     gpio.setwarnings(False)
     gpio.setmode(GPIO.BOARD)
-    gpio.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    gpio.add_event_detect(18, GPIO.RISING, callback = main_event)
+    gpio.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    gpio.add_event_detect(24, GPIO.RISING, callback = main_event)
 
 checkButtonPress()
