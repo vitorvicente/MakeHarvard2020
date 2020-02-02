@@ -50,9 +50,8 @@ def checkButtonPress():
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    while(1):
-        if GPIO.input(18) == GPIO.HIGH:
-            print("here")
+    if GPIO.input(18) == GPIO.HIGH:
+        main_event()
 
 
 checkButtonPress()
