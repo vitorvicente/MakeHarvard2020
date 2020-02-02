@@ -5,8 +5,11 @@ This directory is home to our team's project for MakeHarvard 2020.
 
 ##### Members
 Conor Walsh
+
 Justin Sayah
+
 Patrick Kuzdzal
+
 Vitor Vicente
 
 ##### Idea
