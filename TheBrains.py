@@ -56,6 +56,6 @@ def checkButtonPress():
             main_event()
         else:
             print("[*] Listening...")
-            sleep(2)
+            sleep(4)
 
 checkButtonPress()
